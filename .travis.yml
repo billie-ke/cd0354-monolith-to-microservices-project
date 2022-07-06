@@ -17,7 +17,7 @@ script:
   - docker --version # print the version for logging
   - docker-compose -f docker-compose-build.yaml build --parallel
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push simons22d/udagram-api-feed
-  - docker push simons22d/udagram-api-user
-  - docker push simons22d/udagram-frontend
-  - docker push simons22d/reverseproxy
+  - docker push simons22d/udagram-api-feed:latest
+  - docker push simons22d/udagram-api-user:latest
+  - docker push simons22d/udagram-frontend:latest
+  - docker push simons22d/reverseproxy:latest
