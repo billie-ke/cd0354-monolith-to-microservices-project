@@ -15,9 +15,18 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
+  - docker build -t udagram-api-feed .
+  - docker tag udagram-api-feed simons22d/udagram-api-feed:v2
+  - docker build -t udagram-api-user .
+  - docker tag udagram-api-user simons22d/udagram-api-user:latest
+  - docker build -t udagram-frontend .
+  - docker tag udagram-frontend simons22d/udagram-frontend:v2
+  - docker build -t reverse-proxy .
+  - docker tag reverse-proxy simons22d/reverse-proxy:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node
+  - docker push simons22d/udagram-api-feed
+  - docker push simons22d/udagram-api-user
+  - docker push simons22d/udagram-frontend
+  - docker push simons22d/reverseproxy

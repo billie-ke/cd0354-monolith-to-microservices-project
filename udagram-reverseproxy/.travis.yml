@@ -1,6 +1,5 @@
-language: node_js
-node_js:
-  - 13
+language: shell
+
 
 services:
   - docker
@@ -15,8 +14,8 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node .
-  - docker tag simple-node simons22d/reverse-proxy:latest
+  - docker build -t reverse-proxy .
+  - docker tag reverse-proxy simons22d/reverse-proxy:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
