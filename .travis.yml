@@ -24,7 +24,7 @@ after_success:
   # - docker build -t simons22d/reverseproxy:v4 ./udagram-reverseproxy
   #push image to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push simons22d/jade:v4
+  - docker push simons22d/jade
   # - docker push simons22d/udagram-api-user:v4
   # - docker push simons22d/udagram-frontend:v4
   # - docker push simons22d/reverseproxy:v4
