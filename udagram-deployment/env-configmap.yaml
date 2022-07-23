@@ -4,10 +4,10 @@ metadata:
   name: env-config
 data:
   POSTGRES_USERNAME: postgresdatabase
-  POSTGRES_PASSWORD: postgresdatabase
+  POSTGRES_PASSWORD: database
   POSTGRES_HOST: postgresdatabase.c786ta2l4c5w.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgresdatabase
-  AWS_BUCKET: arn:aws:s3:::microservice-refactor
+  AWS_BUCKET: microservice-refactor
   AWS_REGION: us-east-1
   AWS_PROFILE: default
   JWT_SECRET: testing
